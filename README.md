@@ -37,22 +37,6 @@ This repository contains a collection of solved problems in Java focusing on fun
 ## Usage
 Each problem solution is organized into separate Java classes within appropriate packages. The code is well-commented to explain the logic behind each solution and its time complexity considerations.
 
-## How to Use
-1. **Clone the Repository:**
-   ```
-   git clone https://github.com/VineetOS/data-structures-algorithms-java.git
-   ```
-
-2. **Navigate to a Problem Folder:**
-   ```
-   cd data-structures-algorithms-java/ProblemName
-   ```
-
-3. **Compile and Run:**
-   ```
-  Every Program has a main function, so you can directly run it.
-   ```
-
 ## Contribution
 Contributions are welcome! If you have a new problem solution or an improvement to an existing one, feel free to fork the repository and submit a pull request.
 
