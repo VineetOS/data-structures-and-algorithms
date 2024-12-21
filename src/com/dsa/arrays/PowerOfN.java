@@ -18,9 +18,7 @@ public class PowerOfN {
                 nn = nn/2;
             }
         }
-        if(n<0) {
-            ans = (double) 1.00 / (double) ans;
-        }
+        if(n<0) ans = 1.00 / ans;
         return ans;
     }
 
