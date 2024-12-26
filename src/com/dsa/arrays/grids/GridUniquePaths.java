@@ -1,4 +1,4 @@
-package com.dsa.arrays;
+package com.dsa.arrays.grids;
 
 public class GridUniquePaths {
 

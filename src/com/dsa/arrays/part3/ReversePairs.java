@@ -1,4 +1,4 @@
-package com.dsa.arrays;
+package com.dsa.arrays.part3;
 
 public class ReversePairs {
 
