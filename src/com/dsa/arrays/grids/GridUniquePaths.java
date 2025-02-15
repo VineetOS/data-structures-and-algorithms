@@ -21,6 +21,8 @@ public class GridUniquePaths {
     /*
         Dynamic Programming Solution:
         We store all the paths in a 2D array so that we do not traverse the same path twice
+        Time Complexity: O(nxm)
+        Space Complexity: O(nxm)
      */
 
     public static int countPathsDP(int n, int m, int i, int j, int[][] dp){
@@ -29,6 +31,8 @@ public class GridUniquePaths {
         if(dp[i][j] != -1) return dp[i][j];
         else return dp[i][j] = countPathsDP(n,m,i+1,j, dp) + countPathsDP(n,m,i, j+1,dp);
     }
+
+
 
     public static int gridUniquePathsDP(int n, int m){
         int[][] dp = new int[n][m];
