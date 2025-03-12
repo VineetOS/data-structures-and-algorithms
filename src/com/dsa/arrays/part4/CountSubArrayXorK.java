@@ -17,6 +17,24 @@ public class CountSubArrayXorK {
         return count;
     }
 
+    /*
+    IMPORTANT POINT:
+
+    Example: 4 2 2 6 4
+
+    if unto element 4 : PreXOR
+    from element 1-2 : x
+    from element 3-4: subXOR
+
+    then:
+        x^subXOR = PreXOR
+        (x^subXOR)^subXOR = PreXOR^subXOR
+        x = PreXOR^subXOR
+
+        for checking if subArray is having XOR k, replace subXOR -> k
+        x = PreXOR^k (similar to PreSum - K)
+     */
+
     private static int optimalAproach(int[] arr, int k){
         Map<Integer, Integer> storeMap = new HashMap<>();
         int count=0, prefixXor=0;
