@@ -1,4 +1,4 @@
-package com.dsa.linkedlists.part1;
+package com.dsa.linkedlists.cycle;
 
 import java.util.HashMap;
 import java.util.Map;

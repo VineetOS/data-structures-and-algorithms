@@ -1,6 +1,6 @@
 package com.dsa.linkedlists.part1;
 
-public class DoublyLL {
+public class ReverseDoublyLL {
     Node head;
     class Node{
         int data;
@@ -73,7 +73,7 @@ public class DoublyLL {
 
 
     public static void main(String[] args) {
-        DoublyLL ll = new DoublyLL();
+        ReverseDoublyLL ll = new ReverseDoublyLL();
         ll.addFirst(1);
         ll.addLast(2);
         ll.addFirst(3);
