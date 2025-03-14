@@ -27,7 +27,6 @@ public class MergeSortedLinkedLists {
             temp = temp.getNext();
         }
         return dummyNode.getNext();
-
     }
 
     public static void main(String[] args) {
