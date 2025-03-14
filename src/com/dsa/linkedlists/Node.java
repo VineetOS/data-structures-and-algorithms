@@ -7,6 +7,7 @@ public class Node {
         this.data = data;
         this.next = null;
     }
+    public Node(){}
 
     // Append a new node at the end of the list
     public void append(int data) {
@@ -53,5 +54,13 @@ public class Node {
             temp = temp.next;
         }
         return res;
+    }
+
+    public static Node getNode(Node head, int val) {
+        if(head==null)
+            return null;
+        while(head.data != val) head = head.next;
+
+        return head;
     }
 }

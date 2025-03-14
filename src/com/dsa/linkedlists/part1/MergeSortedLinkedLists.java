@@ -7,7 +7,7 @@ public class MergeSortedLinkedLists {
     /*
     Time Complexity: O(N+M)
     Space Complexity: O(1)
-    We are  not using extra space here, just changing the links
+    We are not using extra space here, just changing the links
      */
     private static Node optimalApproach(Node list1, Node list2){
         if(list1.size() == 0 && list2.size()==0 || list2.size()==0) return list1;
