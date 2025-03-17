@@ -1,6 +1,5 @@
 package com.dsa.linkedlists;
 
-import com.dsa.linkedlists.part1.ReverseLinkedList;
 
 public class Node {
     int data;
