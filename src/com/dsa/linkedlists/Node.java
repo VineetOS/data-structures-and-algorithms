@@ -1,4 +1,7 @@
 package com.dsa.linkedlists;
+
+import com.dsa.linkedlists.part1.ReverseLinkedList;
+
 public class Node {
     int data;
     Node next;
@@ -36,6 +39,27 @@ public class Node {
     public Node getNext(){
         Node temp = this;
         return temp.next;
+    }
+
+    public Node reverse(){
+        Node head = this;
+        if(head.next == null) return head;
+
+        Node prev = head;
+        Node curr = head.next;
+
+        // Traverse the list, continue till
+        // 'temp' reaches the end (NULL)
+        while(curr != null){
+            Node next = curr.next;
+            curr.next = prev;
+
+            prev = curr;
+            curr = next;
+        }
+        head.next = null;
+        head = prev;
+        return head;
     }
 
     public void setData(int data){
