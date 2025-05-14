@@ -19,7 +19,7 @@ public class HighNode {
 
     // Print the linked list
     public void printList() {
-        System.out.println("\nList with Parents and Children: ");
+        // Print the child list
         HighNode parent = this;
         while (parent !=null) {
             HighNode temp = parent;
