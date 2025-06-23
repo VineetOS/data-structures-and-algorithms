@@ -2,12 +2,6 @@ package com.dsa.src.arrays.sorting;
 
 public class InsertionSort {
 
-    private static void swap(int[] arr, int  i, int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
     private static void insertionSort(int[] arr){
         int n = arr.length;
         for(int i=1; i<n; i++){
@@ -27,4 +21,12 @@ public class InsertionSort {
             System.out.print(num + " ");
         }
     }
+
+    private static void swap(int[] arr
+            , int  i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
 }
