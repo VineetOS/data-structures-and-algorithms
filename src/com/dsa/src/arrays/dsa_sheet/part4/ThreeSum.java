@@ -1,4 +1,4 @@
-package com.dsa.src.arrays.part4;
+package com.dsa.src.arrays.dsa_sheet.part4;
 
 import java.util.*;
 

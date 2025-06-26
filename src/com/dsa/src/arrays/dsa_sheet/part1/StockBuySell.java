@@ -1,4 +1,4 @@
-package com.dsa.src.arrays.part1;
+package com.dsa.src.arrays.dsa_sheet.part1;
 
 public class StockBuySell {
 

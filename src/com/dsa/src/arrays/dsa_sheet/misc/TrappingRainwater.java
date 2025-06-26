@@ -1,4 +1,4 @@
-package com.dsa.src.arrays.misc;
+package com.dsa.src.arrays.dsa_sheet.misc;
 
 public class TrappingRainwater {
 
