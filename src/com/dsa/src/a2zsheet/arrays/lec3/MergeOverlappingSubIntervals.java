@@ -1,6 +1,7 @@
 package com.dsa.src.a2zsheet.arrays.lec3;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class MergeOverlappingSubIntervals {
@@ -11,7 +12,7 @@ public class MergeOverlappingSubIntervals {
         }
 
         // Sort the intervals based on the start time
-        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
 
         List<int[]> merged = new java.util.ArrayList<>();
         int[] currentInterval = intervals[0];
