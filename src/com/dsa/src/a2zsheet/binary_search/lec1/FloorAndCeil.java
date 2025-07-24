@@ -1,4 +1,4 @@
-package com.dsa.src.a2zsheet.binary_search;
+package com.dsa.src.a2zsheet.binary_search.lec1;
 
 public class FloorAndCeil {
 

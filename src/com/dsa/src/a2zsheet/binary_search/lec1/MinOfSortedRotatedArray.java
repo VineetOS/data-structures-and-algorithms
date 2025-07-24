@@ -1,6 +1,4 @@
-package com.dsa.src.a2zsheet.binary_search;
-
-import java.util.Map;
+package com.dsa.src.a2zsheet.binary_search.lec1;
 
 public class MinOfSortedRotatedArray {
 
