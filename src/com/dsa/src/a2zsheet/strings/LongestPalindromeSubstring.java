@@ -48,14 +48,6 @@ public class LongestPalindromeSubstring {
         return s.charAt(i) == s.charAt(j) && isPalindromeHelper(s, i + 1, j - 1);
     }
 
-    private static String longestPalindromeDP(String s){
-        boolean[][ ] dp = new boolean[s.length()][s.length()];
-        for(int i=0; i<s.length(); i++){
-            dp[i][i] = true; // Every single character is a palindrome
-        }
-
-    }
-
     private static String bruteForce(String s){
         int n = s.length();
         for(int i=0; i<n; i++)
