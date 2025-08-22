@@ -1,64 +1,63 @@
 package com.dsa.src.dsa_sheet.binary.tree;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class TreeTraversal {
-    static class Node{
-        int data;
-        Node left;
-        Node right;
-
-        public Node(int data){
-            this.data = data;
-            left = null;
-            right = null;
-        }
-    }
 
     static class BinaryTree{
         static int idx = -1;
-        public static Node buildTree(int[] nodes){
+        public static TreeNode buildTree(int[] nodes){
             idx++;
             if(nodes[idx] == -1){
                 return null;
             }
-            Node newNode = new Node(nodes[idx]);
-            newNode.left = buildTree(nodes);
-            newNode.right = buildTree(nodes);
-            return newNode;
+            TreeNode newTreeNode = new TreeNode(nodes[idx]);
+            newTreeNode.left = buildTree(nodes);
+            newTreeNode.right = buildTree(nodes);
+            return newTreeNode;
         }
 
-        public static void preOrder(Node root){
+        public static List<Integer> inorderTraversal(TreeNode root) {
+            if(root == null) return new ArrayList<>();
+            List<Integer> res = inorderTraversal(root.left);
+            res.add(root.val);
+            res.addAll(inorderTraversal(root.right));
+            return res;
+        }
+
+        public static void preOrder(TreeNode root){
             if(root == null) return;
-            System.out.print(root.data + " ");
+            System.out.print(root.val + " ");
             preOrder(root.left);
             preOrder(root.right);
         }
 
-        public static void levelOrderTraversal(Node root){
-            Queue<Node> store = new LinkedList<>();
+        public static void levelOrderTraversal(TreeNode root){
+            Queue<TreeNode> store = new LinkedList<>();
             if(root == null) return;
             store.add(root);
             store.add(null);
             while(!store.isEmpty()){
-                Node currentNode = store.remove();
+                TreeNode currentTreeNode = store.remove();
 
-                if(currentNode == null) {
+                if(currentTreeNode == null) {
                     System.out.println();
                     if (store.isEmpty()) break;
                     else store.add(null);
                 }
                 else{
-                    System.out.print(currentNode.data + " ");
-                    if(currentNode.left != null) store.add(currentNode.left);
-                    if(currentNode.right != null) store.add(currentNode.right);
+                    System.out.print(currentTreeNode.val + " ");
+                    if(currentTreeNode.left != null) store.add(currentTreeNode.left);
+                    if(currentTreeNode.right != null) store.add(currentTreeNode.right);
                 }
             }
         }
 
 
-        public static int countNodes(Node root){
+        public static int countNodes(TreeNode root){
             if(root == null) return 0;
 
             int left = countNodes(root.left);
@@ -66,7 +65,7 @@ public class TreeTraversal {
             return left+right+1;
         }
 
-        public static int depth(Node root){
+        public static int depth(TreeNode root){
             if(root==null) return 0;
             return 1 + Math.max(depth(root.left), depth(root.right));
         }
@@ -74,9 +73,9 @@ public class TreeTraversal {
 
     public static void main(String[] args) {
         int[] nodes = {1,2,4,-1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
-        Node root = BinaryTree.buildTree(nodes);
+        TreeNode root = BinaryTree.buildTree(nodes);
         assert root != null;
-        System.out.println(root.data);
+        System.out.println(root.val);
         System.out.println("Preorder print" );
         BinaryTree.preOrder(root);
         System.out.println();
@@ -84,5 +83,6 @@ public class TreeTraversal {
         BinaryTree.levelOrderTraversal(root);
         System.out.println("Count of nodes: "+ BinaryTree.countNodes(root));
         System.out.println("Depth of tree: "+ BinaryTree.depth(root));
+        System.out.println("InOrder Traversal"+ BinaryTree.inorderTraversal(root));
     }
 }
