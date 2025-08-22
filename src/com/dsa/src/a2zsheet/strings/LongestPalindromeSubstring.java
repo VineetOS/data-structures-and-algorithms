@@ -27,6 +27,35 @@ public class LongestPalindromeSubstring {
         return res;
     }
 
+    private static String longestPalindromeRec(String s, int i, int j) {
+        if (i > j) return "";
+        if (i == j) return s.substring(i, i + 1);
+
+        // If current substring is palindrome, return it
+        if (isPalindromeHelper(s, i, j)) {
+            return s.substring(i, j + 1);
+        }
+
+        // Otherwise check by excluding left or right character
+        String left = longestPalindromeRec(s, i + 1, j);
+        String right = longestPalindromeRec(s, i, j - 1);
+
+        return (left.length() >= right.length()) ? left : right;
+    }
+
+    private static boolean isPalindromeHelper(String s, int i, int j){
+        if(i>=j) return true;
+        return s.charAt(i) == s.charAt(j) && isPalindromeHelper(s, i + 1, j - 1);
+    }
+
+    private static String longestPalindromeDP(String s){
+        boolean[][ ] dp = new boolean[s.length()][s.length()];
+        for(int i=0; i<s.length(); i++){
+            dp[i][i] = true; // Every single character is a palindrome
+        }
+
+    }
+
     private static String bruteForce(String s){
         int n = s.length();
         for(int i=0; i<n; i++)
