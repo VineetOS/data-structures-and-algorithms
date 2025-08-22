@@ -1,6 +1,6 @@
 package com.dsa.src.a2zsheet.strings;
 
-public class AtioAlgorithm {
+public class AtoiAlgorithm {
 
     private static int myAtio(String s){
         int sign = 1, n = s.length(), i=0;
