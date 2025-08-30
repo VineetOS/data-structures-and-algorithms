@@ -4,6 +4,49 @@ import java.util.Arrays;
 
 public class LongestCommonSubsequence {
 
+    static int lcsSpaceOptimisedTransition(String s1, String s2){
+        if(s1.length()>s2.length()){
+            String temp = s1;
+            s1 = s2;
+            s2 = temp;
+        }
+        //KEY IDEA - use 2 rows for previous row and curr row
+        int n = s1.length(), m = s2.length();
+        int[] prev = new int[n+1], curr = new int[n+1];
+        for(int i=1; i<=m; i++){
+            for(int j=1; j<=n; j++){
+                if(s1.charAt(j-1) == s2.charAt(i-1)) curr[j] = 1 + prev[j-1];
+                else curr[j] = Math.max(curr[j-1], prev[j]);
+            }
+            //set prev = curr
+            int[] temp = prev;
+            prev = curr;
+            curr = temp;
+        }
+        return prev[n];
+    }
+
+    static int lcsSpaceOptimised(String s1, String s2){
+        if(s1.length()>s2.length()){
+            String temp = s1;
+            s1 = s2;
+            s2 = temp;
+        }
+        //KEY IDEA - the shorter string is the columns on the DP table and longer string are the rows
+        int n = s1.length(), m = s2.length();
+        int[] dp = new int[n+1];
+        for(int i=1; i<=m; i++){
+            int prevDiag = 0;
+            for(int j=1;j<=n;j++){
+                int temp = dp[j];
+                if(s1.charAt(i-1) == s2.charAt(j-1)) dp[j] = 1 + prevDiag;
+                else dp[j] = Math.max(dp[j], dp[j-1]);
+                prevDiag = temp;
+            }
+        }
+        return dp[n];
+    }
+
     static int longestCommonSubsequenceOptimised(String s1, String s2){
         int n = s1.length();
         int m = s2.length();
